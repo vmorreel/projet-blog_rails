@@ -1,0 +1,19 @@
+%section
+
+    %a= link_to "Retour à la liste utilisateur", [:admin, :users], { :class=>"btn" }
+
+    %h3=@user.first_name + " " + @user.last_name
+
+    -if params[:details]
+        - if @user.avatar.url.present?
+            = image_tag "#{@user.avatar.thumb.url}"
+        %p= "Je suis né le #{@user.birth_date.to_s}. Et j'ai #{@user.teeth_count.to_s} dents."
+        %br
+        %p= "Email : #{@user.email}"
+
+    %a= link_to "Afficher les details", "?details=1", {:class=>"btn"}
+
+    %a= link_to "Edit", [:edit, :admin, @user], {:class=>"btn"}
+
+    %a= link_to "Delete", [:admin, @user],  {method: :delete, :class=>"btn"}
+

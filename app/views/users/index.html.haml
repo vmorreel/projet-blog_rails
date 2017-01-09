@@ -1,0 +1,5 @@
+%section
+    %h2 Users list :
+    %ul
+        -User.all.each do |usrs|
+            %li= link_to "#{usrs.first_name} #{usrs.last_name}"
