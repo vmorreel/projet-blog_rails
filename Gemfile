@@ -47,7 +47,7 @@ end
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
-#Use HAML for templating
+#Use HAML for templating instead of ERB
 gem 'haml'
 
 #Use devise for authentication
