@@ -3,6 +3,7 @@
         <br>
         =link_to"Create post", [:new, :post], {:class => "btn"}
     %h2 Posts list :
+    =link_to "Create post",[:new,:post]
     %ul
         -Post.all.each do |post|
             %section{:class => "posts"}
@@ -10,5 +11,6 @@
                     =link_to "#{post.title}", [post]
                     %span= "#{post.created_at}"
                 %p= "#{post.lead_paragraph}"
+
 
 

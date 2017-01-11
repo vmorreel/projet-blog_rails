@@ -1,10 +1,5 @@
 class UsersController < ApplicationController
   before_action :authenticate_user!, :except=>[:index]
-
-  def index
-    @user = User.all
-  end
-
   def show
     load_user
   end

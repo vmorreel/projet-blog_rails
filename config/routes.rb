@@ -58,11 +58,8 @@ Rails.application.routes.draw do
   #     resources :products
   #   end
 
-  # Example resource route with sub-resources:
   resources :posts
-  
   resources :users
-
 
   root to: "posts#index"
 end
