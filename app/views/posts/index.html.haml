@@ -1,0 +1,6 @@
+%section
+    %h2 Posts list :
+    %ul
+        -Post.all.each do |post|
+            %li= link_to "#{post.title}"
+            %p= "#{post.content}"
