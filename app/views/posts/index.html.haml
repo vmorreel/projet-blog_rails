@@ -1,5 +1,6 @@
 %div
     %h2 Posts list :
+    =link_to "Create post",[:new,:post]
     %ul
         -Post.all.each do |post|
             %section{:class => "posts"}
