@@ -1,3 +1,4 @@
+$(".button-collapse").sideNav();
 /*!
  * Materialize v0.97.8 (http://materializecss.com)
  * Copyright 2014-2015 Materialize

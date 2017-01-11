@@ -3,8 +3,10 @@
     %ul
         -Post.all.each do |post|
             %section{:class => "posts"}
-                %li= link_to "#{post.title}"
-                %p= "#{post.content}"
+                %div
+                    =link_to "#{post.title}", [post]
+                    %span= "#{post.created_at}"
+                %p= "#{post.lead_paragraph}"
 
 
 
