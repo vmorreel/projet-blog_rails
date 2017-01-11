@@ -4,10 +4,9 @@ class PostsController < ApplicationController
         @post = Post.all
     end
 
-#    def show
-#        load_user
-#        load_post
-#    end
+    def show
+        load_post
+    end
 #
 #    def edit
 #        load_user
@@ -29,12 +28,12 @@ class PostsController < ApplicationController
 #        @post = Post.new
 #    end
 #    
-#    protected
+    protected
 #    def load_user
 #        @user = User.find params[:user_id]
 #    end
-#    def load_post
-#        @post = Post.find params[:id]
-#    end
-#    
+    def load_post
+        @post = Post.find params[:id]
+    end
+    
 end

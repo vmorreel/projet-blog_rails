@@ -3,7 +3,7 @@
     %ul
         -Post.all.each do |post|
             %section{:class => "posts"}
-                %li= link_to "#{post.title}"
+                %li= link_to "#{post.title}", [post]
                 %p= "#{post.content}"
 
 
