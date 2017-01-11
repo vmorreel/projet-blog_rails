@@ -1,0 +1,16 @@
+=form_for :post do |f|
+    = f.label 'Title:'
+    = f.text_field :title
+    <br>
+    = f.label 'Lead paragraph:'
+    = f.text_field :lead_paragraph
+    <br>
+    = f.label 'Content:'
+    = f.text_field :content
+    <br>
+    / - if @post.avatar.url.present?
+    /     = image_tag @post.thumbnail.thumb.url
+    / = f.label 'Thumbnail:'
+    / = f.file_field :thumbnail
+    <br>
+    =f.submit "Validate", class: "btn"

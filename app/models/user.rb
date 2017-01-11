@@ -6,7 +6,7 @@ class User < ApplicationRecord
   validates :email, presence: true
   validates :password, presence: true
 
-  has_many :cats
+  has_many :posts
   
   #mount_uploader :avatar, AvatarUploader
 end

@@ -1,0 +1,16 @@
+%section
+
+    %a= link_to "Back to posts", [:posts], { :class=>"btn" }
+
+    %h3= @post.title
+
+    / - if @post.thumbnail.url.present?
+    /     = image_tag "#{@post.avatar.thumb.url}"
+
+    %p= @post.lead_paragraph
+    %p= @post.content
+
+    - if current_user
+        %a= link_to "Edit", [:edit, @post], {:class=>"btn"}
+        %a= link_to "Delete", [@post],  {method: :delete, :class=>"btn"}
+    
