@@ -1,0 +1,10 @@
+10.times do
+	p = Post.new
+	p.title = Faker::RockBand.name
+	p.lead_paragraph = Faker::Lorem.sentence
+	p.content = Faker::Lorem.paragraph
+	p.user_id = 15
+	p.save
+end
+
+

@@ -1,14 +1,13 @@
 %div
     - if current_user
         <br>
-        =link_to"Create post", [:new, :post], {:class => "btn"}
+        =link_to "Create post", new_user_post_path(current_user), {:class => "btn"}
     %h2 Posts list :
-    =link_to "Create post",[:new,:post]
     %ul
         -Post.all.each do |post|
             %section{:class => "posts"}
                 %div
-                    =link_to "#{post.title}", [post]
+                    =link_to "#{post.title}", [@user, post]
                     %span= "#{post.created_at}"
                 %p= "#{post.lead_paragraph}"
 
