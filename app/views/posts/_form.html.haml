@@ -13,7 +13,6 @@
     /     = image_tag @post.thumbnail.thumb.url
     / = f.label 'Thumbnail:'
     / = f.file_field :thumbnail
-    %p=@user.id
     = f.hidden_field :user_id, value: @user.id
     <br>
     =f.submit "Validate", class: "btn"
