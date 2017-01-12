@@ -7,7 +7,7 @@
         -Post.all.each do |post|
             %section{:class => "posts"}
                 %div
-                    =link_to "#{post.title}", [@user, post]
+                    =link_to "#{post.title}", [post.user,post]
                     %span= "#{post.created_at}"
                 %p= "#{post.lead_paragraph}"
 

@@ -2,6 +2,7 @@ class PostsController < ApplicationController
 
   def index
     load_user
+#    @user1 = User.find(1)
     @post = Post.all
   end
 
@@ -11,16 +12,19 @@ class PostsController < ApplicationController
   end
 
   def edit
+    load_user
+   
     load_post
+    
   end
 
   def update
     load_post
     load_user
     if @post.update_attributes(post_params)
-      redirect_to['show']
+      render 'show'
     else
-      redirect_to['edit']
+      render 'show'
     end
   end
 
@@ -33,7 +37,7 @@ class PostsController < ApplicationController
     load_user
     @post = Post.new(post_params)
     if @post.save
-      redirect_to['index']
+      redirect_to['@user,:posts,index']
     else
       render 'new'
     end
@@ -48,7 +52,7 @@ class PostsController < ApplicationController
 
   protected
   def load_user
-    @user = User.find params[:user_id]
+    @user = User.find(params[:user_id])
   end
 
   def load_post

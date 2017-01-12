@@ -1,6 +1,6 @@
 %section
 
-    %a= link_to "Back to posts", [:posts], { :class=>"btn" }
+    %a= link_to "Back to posts", [:user,:posts], { :class=>"btn" }
 
     %h3= @post.title
 
@@ -11,6 +11,6 @@
     %p= @post.content
 
     - if current_user
-        %a= link_to "Edit", [:edit, @post], {:class=>"btn"}
-        %a= link_to "Delete", [@post],  {method: :delete, :class=>"btn"}
+        %a= link_to "Edit", [:edit,@post.user, @post], {:class=>"btn"}
+        %a= link_to "Delete", [@post.user, @post],  {method: :delete, :class=>"btn"}
 

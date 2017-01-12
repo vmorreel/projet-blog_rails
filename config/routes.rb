@@ -58,10 +58,10 @@ Rails.application.routes.draw do
   #     resources :products
   #   end
 
-  resources :posts, :only => [:index]
+
 
   resources :users do
-    resources :posts, :only => [:new, :create, :show, :edit, :update, :destroy]
+    resources :posts
   end
 
   root to: "posts#index"
