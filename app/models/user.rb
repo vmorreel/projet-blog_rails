@@ -8,5 +8,5 @@ class User < ApplicationRecord
 
   has_many :posts
   
-  #mount_uploader :avatar, AvatarUploader
+  mount_uploader :avatar, AvatarUploader
 end

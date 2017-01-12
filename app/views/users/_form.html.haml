@@ -1,4 +1,4 @@
-=form_for @user, url:[:admin, @user] do |f|
+=form_for @user, url:[@user] do |f|
     = f.label 'Prenom:'
     = f.text_field :first_name
     <br>
@@ -8,7 +8,8 @@
     = f.label 'Email:'
     = f.email_field :email
     <br>
-    
+    - if @user.avatar.url.present?
+        = image_tag @user.avatar.thumb.url
     = f.label 'Avatar :'
     = f.file_field :avatar
     <br>

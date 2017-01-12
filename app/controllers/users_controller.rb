@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
-  before_action :authenticate_user!, :except=>[:index]
+  before_action :authenticate_user!, :except=>[:index, :new]
+
   def show
     load_user
   end
@@ -37,7 +38,7 @@ class UsersController < ApplicationController
   end
 
   def user_params
-    params.require(:user).permit(:first_name,:last_name, :email, :password, :password_confirmation, :avatar)
+    params[:user].permit(:first_name, :last_name, :email, :password, :password_confirmation, :avatar)
   end
 
   protected
