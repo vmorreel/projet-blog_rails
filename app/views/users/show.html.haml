@@ -2,7 +2,7 @@
 
     %a= link_to "Back to Users list", [:users], { :class=>"btn" }
 
-    /%h3= @user.first_name + " " + @user.last_name
+    %h3= @user.first_name 
 
     - if @user.avatar.url.present?
         = image_tag "#{@user.avatar.thumb.url}"

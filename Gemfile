@@ -57,7 +57,7 @@ gem 'devise'
 gem 'faker'
 
 #Use carrierwave to manage pictures
-gem 'carrierwave'
+gem 'carrierwave','~> 1.0'
 
 #Use minimagick to create different versions of pics
 gem 'mini_magick'
