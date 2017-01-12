@@ -1,7 +1,6 @@
 class PostsController < ApplicationController
 
   def index
-    load_user
 #    @user1 = User.find(1)
     @post = Post.all
   end
@@ -13,7 +12,6 @@ class PostsController < ApplicationController
 
   def edit
     load_user
-   
     load_post
     
   end

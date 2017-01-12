@@ -9,6 +9,7 @@
                 %div
                     =link_to "#{post.title}", [post.user,post]
                     %span= "#{post.created_at}"
+                    %span= "#{post.user.first_name}"
                 %p= "#{post.lead_paragraph}"
 
 

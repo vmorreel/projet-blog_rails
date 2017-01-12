@@ -10,7 +10,7 @@
     %p= @post.lead_paragraph
     %p= @post.content
 
-    - if current_user
-        %a= link_to "Edit", [:edit,@post.user, @post], {:class=>"btn"}
+    - if @post.user == current_user
+        %a= link_to "Edit", [:edit, @post.user, @post], {:class=>"btn"}
         %a= link_to "Delete", [@post.user, @post],  {method: :delete, :class=>"btn"}
 
