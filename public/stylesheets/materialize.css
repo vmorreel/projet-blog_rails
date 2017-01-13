@@ -8559,7 +8559,7 @@ body{
 
 section {
   background-color: white;
-  max-width: 60%;
+  width: 60%;
   margin: 2% auto;
   padding: 2%;
   box-shadow: 0px 2px 1px #888888;
@@ -8572,6 +8572,7 @@ section {
 
 .posts {
   text-align: left;
+  display: inline-block;
 }
 
 ul section div>span {
@@ -8585,5 +8586,11 @@ ul section div a {
 
 #user_email, #user_password, #user_password_confirmation, #user_first_name, #user_last_name {
   max-width: 60%;
+}
+
+div.post_precontent {
+  display: inline-block;
+  margin-left: 3%;
+  vertical-align: top;
 }
 

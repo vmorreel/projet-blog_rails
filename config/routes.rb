@@ -57,8 +57,6 @@ Rails.application.routes.draw do
   #     resources :products
   #   end
 
-
-
   resources :users do
     resources :posts
   end

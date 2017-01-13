@@ -1,11 +1,19 @@
 %section
 
     %a= link_to "Back to posts", [:user,:posts], { :class=>"btn" }
+    
+    %div
+        %h3= @post.title
+        <span> Written by:
+        =link_to "#{@post.user.first_name} #{@post.user.last_name}", @post.user
+        </span>
+        %span= "Date: #{@post.created_at}"
 
-    %h3= @post.title
+    %br
+    %br
 
     - if @post.thumbnail.url.present?
-        = image_tag "#{@post.thumbnail.thumb.url}"
+        = image_tag "#{@post.thumbnail.url}"
 
     %p= @post.lead_paragraph
     %p= @post.content
