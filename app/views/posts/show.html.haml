@@ -20,5 +20,19 @@
         %a= link_to "Edit", [:edit, @post.user, @post], {:class=>"btn"}
         %a= link_to "Delete", [@post.user, @post],  {method: :delete, :class=>"btn"}
 
+    - if current_user
+        =form_for @comment = Comment.new, :html => {:class => "commenting"}, url:[@user, @post, @comment] do |c|
+            = c.label 'Write a comment about it:'
+            = c.text_field :content
+            = c.submit "Publish it!", class: "btn"
 
 %h3= "Comments:"
+-@post.comments.each do |c|
+    %section{:class => 'posts'}
+        - if @user.avatar.url.present?
+            = image_tag "#{@user.avatar.thumb_comment.url}"
+        %div{:class => "post_precontent"}
+            %div 
+                =link_to "#{@user.first_name} #{@user.last_name}", [@post.user]
+                %span= "Date: #{@comment.publishing_date}"
+        %p= c.content

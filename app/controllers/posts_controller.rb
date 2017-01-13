@@ -57,6 +57,9 @@ class PostsController < ApplicationController
     @post = Post.find params[:id]
   end
 
+  def post_params
+    params[:post].permit(:title, :content, :lead_paragraph, :user_id, :thumbnail)
+  end
 
 
 end

@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-#  devise_for :users
+  #  devise_for :users
   devise_for :users, :controllers => { :registrations => "registrations" }
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   # The priority is based upon order of creation: first created -> highest priority.
@@ -58,7 +58,9 @@ Rails.application.routes.draw do
   #   end
 
   resources :users do
-    resources :posts
+    resources :posts do
+      resources :comments
+    end
   end
 
   root to: "posts#index"
