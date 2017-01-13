@@ -8,10 +8,8 @@
         =link_to "#{@post.user.first_name} #{@post.user.last_name}", @post.user
         </span>
         %span= "Date: #{@post.created_at}"
-
     %br
     %br
-
     - if @post.thumbnail.url.present?
         = image_tag "#{@post.thumbnail.url}"
 
@@ -22,3 +20,5 @@
         %a= link_to "Edit", [:edit, @post.user, @post], {:class=>"btn"}
         %a= link_to "Delete", [@post.user, @post],  {method: :delete, :class=>"btn"}
 
+
+%h3= "Comments:"
