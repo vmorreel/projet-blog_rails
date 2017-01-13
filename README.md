@@ -66,7 +66,7 @@ Please read [CONTRIBUTING.md](https://gist.github.com/PurpleBooth/b24679402957c6
 
 ## Versioning
 
-We use [GitHube](http://github.com/) for versioning. For the versions available, see the [tags on this repository](https://github.com/vmorreel/projet-blog_rails/tags). 
+We use [GitHub](http://github.com/) for versioning. For the versions available, see the [tags on this repository](https://github.com/vmorreel/projet-blog_rails/tags). 
 
 ## Authors
 
