@@ -1,6 +1,6 @@
 %section
 
-    %a= link_to "Back to Users list", [:users], { :class=>"btn" }
+    =link_to "Back to Users list", [:users], { :class=>"btn" }
 
     %h3= @user.first_name + ' ' + @user.last_name
 
@@ -12,21 +12,23 @@
 
 
     - if @user == current_user
-        %a= link_to "Edit", [:edit, @user], {:class=>"btn"}
+        =link_to "Edit", [:edit, @user], {:class=>"btn"}
 
-        %a= link_to "Delete", [@user],  {method: :delete, :class=>"btn"}
-%br
-%h3= "Posts:"
+        =link_to "Delete", [@user],  {method: :delete, :class=>"btn"}
+-if @user.posts.size == 0
+    %p= "#{@user.first_name} #{@user.last_name} doesn't write yet posts."
+-else 
+    %h3= "Posts:"
 
--@user.posts.each do |post|
-    %section{:class => "posts"}
-        - if post.thumbnail.url.present?
-            = image_tag "#{post.thumbnail.thumb.url}"
-        %div{:class => "post_precontent"}
-            %div 
-                =link_to "#{post.title}", [post.user, post]
-                <span> Written by:
-                =link_to "#{post.user.first_name} #{post.user.last_name}", post.user
-                </span>
-                %span= "Date: #{post.created_at}"
-            %p= "#{post.lead_paragraph}"
+    -@user.posts.order("created_at desc").each do |post|
+        %section{:class => "posts"}
+            - if post.thumbnail.url.present?
+                = image_tag "#{post.thumbnail.thumb.url}"
+            %div{:class => "post_precontent"}
+                %div 
+                    =link_to "#{post.title}", [post.user, post]
+                    <span> Written by:
+                    =link_to "#{post.user.first_name} #{post.user.last_name}", post.user
+                    </span>
+                    %span= "Date: #{post.created_at}"
+                %p= "#{post.lead_paragraph}"

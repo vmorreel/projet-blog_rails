@@ -4123,7 +4123,7 @@ nav ul li.active {
   background-color: rgba(0, 0, 0, 0.1);
 }
 
-nav ul a {
+nav ul a:not(#userProfile) {
   transition: background-color .3s;
   font-size: 1rem;
   color: #fff;
@@ -8581,20 +8581,31 @@ ul section div>span {
 }
 
 ul section div a {
-  font-size: 1.3em;
+    font-size: 1.3em;
 }
 
 #user_email, #user_password, #user_password_confirmation, #user_first_name, #user_last_name {
-  max-width: 60%;
+    max-width: 60%;
 }
 
 div.post_precontent {
-  display: inline-block;
-  margin-left: 3%;
-  vertical-align: top;
+    display: inline-block;
+    width: 75%;
+    margin-left: 3%;
+    vertical-align: top;
 }
 
 .commenting {
-  text-align: left;
-  margin-top: 5%;
+    text-align: left;
+    margin-top: 5%;
+}
+
+#userProfile{
+    display: inline;
+    padding: 0;
+}
+
+#userProfile:hover{
+    background: transparent;
+    color:rgba(0, 0, 0, 0.3);
 }

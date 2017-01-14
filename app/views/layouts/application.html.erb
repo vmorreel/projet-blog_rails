@@ -18,7 +18,7 @@
             <li><a href="/users/">Users</a></li>
             <% if user_signed_in? %>
                 <li class="right"><%= link_to('Logout',destroy_user_session_path, {:method => :delete}) %></li>
-                <li class="right">Bonjour, <%= current_user.email %></li>
+                <li class="right">Bonjour, <%= link_to(current_user.email,current_user,{:id => :userProfile}) %></li>
             <% else %>
                  <li class="right"><%= link_to('Sign up', new_user_registration_path)%></li>
                  <li class="right"><%= link_to('Login',new_user_session_path)%></li>

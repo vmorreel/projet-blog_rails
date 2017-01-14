@@ -4,7 +4,7 @@
         =link_to "Create post", new_user_post_path(current_user), {:class => "btn"}
     %h2 Posts list :
     %ul
-        -Post.all.each do |post|
+        -Post.all.order("created_at desc").each do |post|
             %section{:class => "posts"}
                 - if post.thumbnail.url.present?
                     = image_tag "#{post.thumbnail.thumb.url}"
@@ -14,5 +14,6 @@
                         <span> Written by:
                         =link_to "#{post.user.first_name} #{post.user.last_name}", post.user
                         </span>
+                        <br>
                         %span= "Date: #{post.created_at}"
                     %p= "#{post.lead_paragraph}"
