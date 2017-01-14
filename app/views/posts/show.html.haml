@@ -23,7 +23,7 @@
     - if current_user
         =form_for @comment = Comment.new, :html => {:class => "commenting"}, url:[@user, @post, @comment] do |c|
             = c.label 'Write a comment about it:'
-            = c.text_field :content
+            = c.text_field :content,:required => true
             = c.submit "Publish it!", class: "btn"
 
 -if @post.comments.size == 0
