@@ -9,6 +9,7 @@ class User < ApplicationRecord
   validates :password, presence: true
 
   has_many :posts, dependent: :destroy
+  has_many :comments, dependent: :destroy
   
   mount_uploader :avatar, AvatarUploader
 end

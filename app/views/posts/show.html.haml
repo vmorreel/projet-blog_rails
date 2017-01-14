@@ -30,16 +30,16 @@
     %p= "Be the first to write a comment !"
 -else
     %h3= "Comments:"
-    -@post.comments.each do |c|
+    -@post.comments.order("created_at desc").each do |c|
         %section{:class => 'posts'}
-            - if @user.avatar.url.present?
-                = image_tag "#{@user.avatar.thumb_comment.url}"
+            - if c.user.avatar.url.present?
+                = image_tag "#{c.user.avatar.thumb_comment.url}"
             %div{:class => "post_precontent"}
                 %div 
-                    =link_to "#{@user.first_name} #{@user.last_name}", [@user]
+                    =link_to "#{c.user.first_name} #{c.user.last_name}", [c.user]
                     %span= "Date: #{c.created_at}"
             %p= c.content
-            -if @user == current_user
+            -if c.user == current_user
                 =link_to "Delete", [@post.user,@post,c],  {method: :delete, :class=>"btn"}
 
             

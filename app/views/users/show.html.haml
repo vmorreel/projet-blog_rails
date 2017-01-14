@@ -12,11 +12,11 @@
 
 
     - if @user == current_user
-        =link_to "Edit", [:edit, @user], {:class=>"btn"}
+        =link_to "Edit", edit_user_registration_path, {:class=>"btn"}
 
         =link_to "Delete", [@user],  {method: :delete, :class=>"btn"}
 -if @user.posts.size == 0
-    %p= "#{@user.first_name} #{@user.last_name} doesn't write yet posts."
+    %p= "#{@user.first_name} #{@user.last_name} doesn't write posts yet."
 -else 
     %h3= "Posts:"
 
