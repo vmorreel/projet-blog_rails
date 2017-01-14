@@ -8583,7 +8583,7 @@ ul section div a {
     font-size: 1.3em;
 }
 
-#user_email, #user_password, #user_password_confirmation, #user_first_name, #user_last_name {
+#user_email, #user_password, #user_password_confirmation, #user_first_name, #user_last_name, #user_current_password {
     max-width: 60%;
 }
 
